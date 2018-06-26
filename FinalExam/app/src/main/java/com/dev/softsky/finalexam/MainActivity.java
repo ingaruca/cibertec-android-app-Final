@@ -33,9 +33,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Thread tr = new Thread(){
-                    final String resul = consumirJSON();
                     @Override
                     public void run() {
+                        final String resul = consumirJSON();
+
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
@@ -70,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
 
         try{
             //cabiar IP de acuerdo al comando ipconfig(CMD)
-            url = new URL("http://192.168.43.221/serviciosAndroid/listarUsuarios.php");
+            url = new URL("http://192.168.1.20/serviciosAndroid/listarUsuarios.php");
             HttpURLConnection connection = (HttpURLConnection)url.openConnection();
             respuesta = connection.getResponseCode();
 

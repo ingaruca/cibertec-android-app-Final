@@ -23,6 +23,7 @@ public class ListadoUsuarios extends AppCompatActivity {
         Cursor cursor;
         bd.abrir();
         cursor = bd.listarUsuarios();
+        bd.cerrar();
 
         final ArrayList<String> lista = new ArrayList<String>();
         String registro = "";
